@@ -736,7 +736,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check10 = userAnswer10.getText()
         if check10 == answersList[9]:
-            questionTitle5.undraw()
+            questionTitle10.undraw()
             question10.undraw()
             userAnswer10.undraw()
             submit.undraw()
@@ -782,6 +782,5 @@ def youWon(win):
     gameWon.draw(win)
     pressEnterWhenReady(win)
     win.close()
-
 
 main()
