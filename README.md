@@ -12,7 +12,8 @@
     specific index, for an specific question. 
     
     I used 10 functions, aside from the main. These are: consoleLikeLook(win), gameLogo(win), instructions(win), pressEnterWhenReady(win),
-    correctAnswer(win), incorrectAnswer(win), lifesExplanation(win), game(win, questionList, answerList, availableLifes), gameOver(win) and     lastly youWon(win). The functions consoleLikeLook(win), gameLogo(win), instructions(win) and lifesExplanation(win) are all functions
+    correctAnswer(win), incorrectAnswer(win), lifesExplanation(win), game(win, questionList, answerList, availableLifes), gameOver(win) and 
+    lastly youWon(win). The functions consoleLikeLook(win), gameLogo(win), instructions(win) and lifesExplanation(win) are all functions
     that contain the design of the game, basically the aesthetics. The pressEnterWhenReady(win) is a function that justs freezes the window
     until the user enters any key, this function is used multiple times throughout the program. The functions correctAnswer(win) and
     incorrectAnswer(win) display if you had a correct or incorrect answer. The gameOver(win) and youWon(win) functions display if you won
