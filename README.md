@@ -14,23 +14,30 @@ one list holds all of the questions, while the other holds all of the answer, th
 I can just call the list in a specific index, for an specific question. 
     
 I used 10 functions, aside from the main. These are:  
-    - **consoleLikeLook(win)**,   
+    - **consoleDesign(win)**,   
     - **gameLogo(win)**,    
     - **instructions(win)**,   
-    - **pressEnterWhenReady(win)**,  
+    - **pressKeyWhenReady(win)**,  
     - **correctAnswer(win)**,   
     - **incorrectAnswer(win)**,   
-    - **lifesExplanation(win)**,   
+    - **lifes(win)**,   
     - **game(win, questionList, answerList, availableLifes)**,   
     - **gameOver(win)**,    
-    - **youWon(win)**  
+    - **youWon(win)**,
+    - **totalCorrectAnswers(win, correct)**,
+    - **getUser(win)**,
+    - **printScore(user, correct)**,
+    - **thanksAndCreator(win)**,  
  
- The functions *consoleLikeLook(win)*, *gameLogo(win)*, *instructions(win)* and *lifesExplanation(win)* are all functions that contain the  
- design of the game, basically the aesthetics. The *pressEnterWhenReady(win)* is a function that justs freezes the window until the  
- user enters any key, this function is used multiple times throughout the program. The functions *correctAnswer(win)* and  
- *incorrectAnswer(win)* display if you had a correct or incorrect answer. The *gameOver(win)* and *youWon(win)* functions display if you won  
- the game or if you lost. Finally, the *game(win, questionList, answerList, availableLifes)* function holds the algorithm that performs
- the game.
+The functions *consoleDesign(win)*, *gameLogo(win)*, *instructions(win)* and *lifes(win)* are all functions that contain the  
+design of the game, basically the aesthetics. The *pressKeyWhenReady(win)* is a function that justs freezes the window until the  
+user enters any key, this function is used multiple times throughout the program. The functions *correctAnswer(win)* and  
+*incorrectAnswer(win)* display if you had a correct or incorrect answer. The *gameOver(win)* and *youWon(win)* functions display  
+if you won the game or if you lost. The function *totalCorrectAnswers(win, correct)* displays how many correct answers you had  
+if you win, while the *getUser(win)* function gets the name of the user that is playing. Both of these functions are needed for  
+the *printScore(usr, correct)* function that prints in a .txt file the user and his score. The *thanksAndCreator(win)* function  
+just displays a thank you for playing and my name as the creator. Finally, the *game(win, questionList, answerList, availableLifes)*   
+function holds the algorithm that performs the game.
 
 ## CONTACT:
 
