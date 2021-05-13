@@ -23,11 +23,11 @@ I used 10 functions, aside from the main. These are:
     - **lifes(win)**,   
     - **game(win, questionList, answerList, availableLifes)**,   
     - **gameOver(win)**,    
-    - **youWon(win)**,
-    - **totalCorrectAnswers(win, correct)**,
-    - **getUser(win)**,
-    - **printScore(user, correct)**,
-    - **thanksAndCreator(win)**,  
+    - **youWon(win)**,  
+    - **totalCorrectAnswers(win, correct)**,  
+    - **getUser(win)**,  
+    - **printScore(user, correct)**,  
+    - **thanksAndCreator(win)**,    
  
 The functions *consoleDesign(win)*, *gameLogo(win)*, *instructions(win)* and *lifes(win)* are all functions that contain the  
 design of the game, basically the aesthetics. The *pressKeyWhenReady(win)* is a function that justs freezes the window until the  
