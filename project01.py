@@ -867,7 +867,7 @@ def game(win, questionsList, answersList, availableLifes):
             incorrectAnswer(win)
 
         youWon(win)
-        correctAnswers(win, correct)
+        totalCorrectAnswers(win, correct)
         thanksAndCreator(win)
         printScore(username, str(correct))
 
@@ -899,7 +899,7 @@ def youWon(win):
     gameWon.undraw()
 
 
-def correctAnswers(win, correct):
+def totalCorrectAnswers(win, correct):
 
     correctAns = Text(Point(250, 250), "You had")
     correctAns2 = Text(Point(325, 250), correct)
