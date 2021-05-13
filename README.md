@@ -35,8 +35,8 @@ user enters any key, this function is used multiple times throughout the program
 *incorrectAnswer(win)* display if you had a correct or incorrect answer. The *gameOver(win)* and *youWon(win)* functions display  
 if you won the game or if you lost. The function *totalCorrectAnswers(win, correct)* displays how many correct answers you had  
 if you win, while the *getUser(win)* function gets the name of the user that is playing. Both of these functions are needed for  
-the *printScore(usr, correct)* function that prints in a .txt file the user and his score. The *thanksAndCreator(win)* function  
-just displays a thank you for playing and my name as the creator. Finally, the *game(win, questionList, answerList, availableLifes)*   
+the *printScore(user, correct)* function that creates a .txt file that holds the user and his score. The *thanksAndCreator(win)* function  
+just displays a thank you message and my name as the creator. Finally, the *game(win, questionList, answerList, availableLifes)*   
 function holds the algorithm that performs the game.
 
 ## CONTACT:
