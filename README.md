@@ -41,8 +41,8 @@ function holds the algorithm that performs the game.
 
 ## CONTACT:
 
-creator: **Jadnell H. Reyes Perez**
-student_IdNum: **109739**
-personal_email: **jadnell555@gmail.com**
-institutional_email: **reyes_109739@students.pupr.edu**
+creator: **Jadnell H. Reyes Perez**  
+student_IdNum: **109739**  
+personal_email: **jadnell555@gmail.com**  
+institutional_email: **reyes_109739@students.pupr.edu**  
 
