@@ -1,20 +1,16 @@
 from graphics import *
+from cheatSheet import *  # File that contains questions and answers
 
 
 def main():
+
    # Graphic Window
+
     win = GraphWin("Game", 500, 500)
+
     win.setBackground("green4")
 
-    answersList = ["1", "blue", "25", "haresh", "3.14",
-                   "python", "linus", "0", "20", "2.718"]
-
-    questionsList = ["How much is 2^0?", "What color was the font of the instructions?", "How much is 1/4 of 100?",
-                     "What was the first word of the game's title?", "Which are the first 3 digits of PI?",
-                     "What programming language are we learning in class?", "What is the first name of the creator of Linux?",
-                     "What is the result of (1 + 2)(1^2 + 3(1) - 4)?", "What is the least amount of moves to solve a Rubik's Cube?", "Which are the first 4 digits of e (Euler's Constant)?"]
-
-    consoleLikeLook(win)  # Retro console look
+    consoleDesign(win)  # Retro console look
     gameLogo(win)         # Logo of the game at start
     instructions(win)     # Instructions of the game
 
@@ -36,14 +32,14 @@ def main():
     life3.setOutline("Yellow")
     life3.draw(win)
 
-    availableLifes = [life1, life2, life3] # List made from the lifes so that the game function only has the
-                                           # availableLifes parameter insteas of 3 lifes
-
-    lifesExplanation(win)                                   # Lifes introduction
+    # List made from the lifes
+    availableLifes = [life1, life2, life3]
+    lifes(win)  # Lifes introduction
     game(win, questionsList, answersList, availableLifes)   # Game start
 
 
-def consoleLikeLook(win):
+def consoleDesign(win):
+
     # Screen
     screen = Rectangle(Point(50, 50), Point(450, 450))
     screen.setFill("light gray")
@@ -53,7 +49,6 @@ def consoleLikeLook(win):
     selectButton = Rectangle(Point(78, 480), Point(121, 460))
     selectButton.setFill("pink")
     selectButton.draw(win)
-
     selectLabel = Text(Point(100, 471.0), "Select")
     selectLabel.setSize(8)
     selectLabel.setFace("courier")
@@ -64,7 +59,6 @@ def consoleLikeLook(win):
     powerButton = Rectangle(Point(380, 480), Point(420, 460))
     powerButton.setFill("pink")
     powerButton.draw(win)
-
     powerLabel = Text(Point(400, 471.0), "Power")
     powerLabel.setSize(8)
     powerLabel.setFace("courier")
@@ -81,26 +75,31 @@ def consoleLikeLook(win):
 
 
 def gameLogo(win):
+
     gameLogo = Text(Point(250, 250), "Haresh Quiz Game")
     gameLogo.setSize(26)
     gameLogo.setStyle("bold italic")
     gameLogo.setFace("helvetica")
     gameLogo.setTextColor("blue3")
     gameLogo.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
     gameLogo.undraw()
 
 
-def pressEnterWhenReady(win):
-    clickKeyWhenReady = Text(Point(250, 425), "Press any key to continue!")
-    clickKeyWhenReady.setSize(16)
-    clickKeyWhenReady.setStyle("bold")
-    clickKeyWhenReady.setFace("arial")
-    clickKeyWhenReady.setFill("gray")
-    clickKeyWhenReady.draw(win)
+def pressKeyWhenReady(win):
+
+    pressKeyWhenReady = Text(Point(250, 425), "Press any key to continue!")
+    pressKeyWhenReady.setSize(16)
+    pressKeyWhenReady.setStyle("bold")
+    pressKeyWhenReady.setFace("arial")
+    pressKeyWhenReady.setFill("gray")
+    pressKeyWhenReady.draw(win)
+
     for i in range(1):
         ready = win.getKey()
-    clickKeyWhenReady.undraw()
+
+    pressKeyWhenReady.undraw()
 
 
 def instructions(win):
@@ -126,8 +125,7 @@ def instructions(win):
     ins_line1.setOutline("blue")
     ins_line1.draw(win)
 
-    ins_line2 = Text(
-        Point(250, 200), "Each correct question earns you 1 point.")
+    ins_line2 = Text(Point(250, 200), "Each correct question earns you 1 point.")
     ins_line2.setSize(14)
     ins_line2.setStyle("italic")
     ins_line2.setFace("helvetica")
@@ -141,16 +139,14 @@ def instructions(win):
     ins_line3.setOutline("blue")
     ins_line3.draw(win)
 
-    ins_line4 = Text(
-        Point(250, 250), "one question incorrectly you lose 1 life.")
+    ins_line4 = Text(Point(250, 250), "one question incorrectly you lose 1 life.")
     ins_line4.setSize(14)
     ins_line4.setStyle("italic")
     ins_line4.setFace("helvetica")
     ins_line4.setOutline("blue")
     ins_line4.draw(win)
 
-    ins_line5 = Text(
-        Point(250, 275), "If you lose all of your lives it's game over.")
+    ins_line5 = Text(Point(250, 275), "If you lose all of your lives it's game over.")
     ins_line5.setSize(14)
     ins_line5.setStyle("italic")
     ins_line5.setFace("helvetica")
@@ -164,9 +160,11 @@ def instructions(win):
     ins_line6.setOutline("blue")
     ins_line6.draw(win)
 
-    pressEnterWhenReady(win)
+    pressKeyWhenReady(win)
+
     questionTitle.undraw()
     instructions.undraw()
+
     ins_line1.undraw()
     ins_line2.undraw()
     ins_line3.undraw()
@@ -176,27 +174,30 @@ def instructions(win):
 
 
 def correctAnswer(win):
+
     correct = Text(Point(250, 250), "YOU ARE CORRECT! :)")
     correct.setFill("gold3")
     correct.setFace("helvetica")
     correct.setSize(26)
     correct.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
     correct.undraw()
 
 
 def incorrectAnswer(win):
+
     incorrect = Text(Point(250, 250), "YOU ARE INCORRECT! :|")
     incorrect.setFill("red")
     incorrect.setFace("helvetica")
     incorrect.setSize(24)
     incorrect.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
     incorrect.undraw()
 
 
-def lifesExplanation(win):
-
+def lifes(win):
     life_exp1 = Text(Point(250, 225), "Those dots on the right upper")
     life_exp1.setFace("helvetica")
     life_exp1.setFill("red")
@@ -217,20 +218,26 @@ def lifesExplanation(win):
     life_exp3.setStyle("bold")
     life_exp3.setSize(20)
     life_exp3.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
+
     life_exp1.undraw()
     life_exp2.undraw()
     life_exp3.undraw()
-    return life_exp1
+
 
 
 def game(win, questionsList, answersList, availableLifes):
     questionCount = 0
     incorrect = 0
+    correct = 0
+    username = getUser(win)
 
     while questionCount != 11:
+
         # Question 1:
         questionCount = questionCount + 1
+
         questionTitle1 = Text(Point(250, 100), "Question #1:")
         questionTitle1.setSize(18)
         questionTitle1.setStyle("bold italic")
@@ -255,26 +262,35 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check1 = userAnswer1.getText()
+
         if check1 == answersList[0]:
             questionTitle1.undraw()
             question1.undraw()
             userAnswer1.undraw()
             submit.undraw()
+
             correctAnswer(win)
+
+            correct = correct + 1
+
         else:
             incorrect = incorrect + 1
+
             questionTitle1.undraw()
             question1.undraw()
             userAnswer1.undraw()
             submit.undraw()
             availableLifes[2].undraw()
+
             incorrectAnswer(win)
 
         # Question 2:
         questionCount = questionCount + 1
+
         questionTitle2 = Text(Point(250, 100), "Question #2:")
         questionTitle2.setSize(18)
         questionTitle2.setStyle("bold italic")
@@ -299,29 +315,39 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check2 = userAnswer2.getText()
+
         if check2 == answersList[1]:
             questionTitle2.undraw()
             question2.undraw()
             userAnswer2.undraw()
             submit.undraw()
+
             correctAnswer(win)
+
+            correct = correct + 1
+
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
             elif incorrect == 1:
                 availableLifes[1].undraw()
+            
             incorrect = incorrect + 1
+
             questionTitle2.undraw()
             question2.undraw()
             userAnswer2.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 3:
         questionCount = questionCount + 1
+
         questionTitle3 = Text(Point(250, 100), "Question #3:")
         questionTitle3.setSize(18)
         questionTitle3.setStyle("bold italic")
@@ -346,37 +372,51 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check3 = userAnswer3.getText()
+
         if check3 == answersList[2]:
             questionTitle3.undraw()
             question3.undraw()
             userAnswer3.undraw()
             submit.undraw()
+
             correctAnswer(win)
+
+            correct = correct + 1
+
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle3.undraw()
                 question3.undraw()
                 userAnswer3.undraw()
                 submit.undraw()
+
                 gameOver(win)
+
                 break
+
             questionTitle3.undraw()
             question3.undraw()
             userAnswer3.undraw()
             submit.undraw()
+
             incorrect = incorrect + 1
+
             incorrectAnswer(win)
 
         # Question 4:
         questionCount = questionCount + 1
+
         questionTitle4 = Text(Point(250, 100), "Question #4:")
         questionTitle4.setSize(18)
         questionTitle4.setStyle("bold italic")
@@ -401,38 +441,50 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check4 = userAnswer4.getText()
+
         if check4 == answersList[3]:
             questionTitle4.undraw()
             question4.undraw()
             userAnswer4.undraw()
             submit.undraw()
+
             correctAnswer(win)
+
+            correct = correct + 1
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle4.undraw()
                 question4.undraw()
                 userAnswer4.undraw()
                 submit.undraw()
+
                 incorrectAnswer(win)
+
                 gameOver(win)
                 break
             incorrect = incorrect + 1
+
             questionTitle4.undraw()
             question4.undraw()
             userAnswer4.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 5:
         questionCount = questionCount + 1
+
         questionTitle5 = Text(Point(250, 100), "Question #5:")
         questionTitle5.setSize(18)
         questionTitle5.setStyle("bold italic")
@@ -457,37 +509,48 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check5 = userAnswer5.getText()
+
         if check5 == answersList[4]:
             questionTitle5.undraw()
             question5.undraw()
             userAnswer5.undraw()
             submit.undraw()
+
             correctAnswer(win)
+
+            correct = correct + 1
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle5.undraw()
                 question5.undraw()
                 userAnswer5.undraw()
                 submit.undraw()
+
                 gameOver(win)
                 break
+
             incorrect = incorrect + 1
             questionTitle5.undraw()
             question5.undraw()
             userAnswer5.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 6:
         questionCount = questionCount + 1
+
         questionTitle6 = Text(Point(250, 100), "Question #6:")
         questionTitle6.setSize(18)
         questionTitle6.setStyle("bold italic")
@@ -512,20 +575,27 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check6 = userAnswer6.getText()
+
         if check6 == answersList[5]:
             questionTitle6.undraw()
             question6.undraw()
             userAnswer6.undraw()
             submit.undraw()
+
             correctAnswer(win)
+            correct = correct + 1
         else:
+
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle6.undraw()
@@ -534,15 +604,18 @@ def game(win, questionsList, answersList, availableLifes):
                 submit.undraw()
                 gameOver(win)
                 break
+
             incorrect = incorrect + 1
             questionTitle6.undraw()
             question6.undraw()
             userAnswer6.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 7:
         questionCount = questionCount + 1
+
         questionTitle7 = Text(Point(250, 100), "Question #7:")
         questionTitle7.setSize(18)
         questionTitle7.setStyle("bold italic")
@@ -567,33 +640,43 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check7 = userAnswer7.getText()
+
         if check7 == answersList[6]:
             questionTitle7.undraw()
             question7.undraw()
             userAnswer7.undraw()
             submit.undraw()
             correctAnswer(win)
+            correct = correct + 1
         else:
+
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle7.undraw()
                 question7.undraw()
                 userAnswer7.undraw()
                 submit.undraw()
+
                 gameOver(win)
+
                 break
+
             incorrect = incorrect + 1
             questionTitle7.undraw()
             question7.undraw()
             userAnswer7.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 8:
@@ -622,20 +705,26 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check8 = userAnswer8.getText()
+
         if check8 == answersList[7]:
             questionTitle8.undraw()
             question8.undraw()
             userAnswer8.undraw()
             submit.undraw()
             correctAnswer(win)
+            correct = correct + 1
         else:
+
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle8.undraw()
@@ -644,15 +733,18 @@ def game(win, questionsList, answersList, availableLifes):
                 submit.undraw()
                 gameOver(win)
                 break
+
             incorrect = incorrect + 1
             questionTitle8.undraw()
             question8.undraw()
             userAnswer8.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 9:
         questionCount = questionCount + 1
+
         questionTitle9 = Text(Point(250, 100), "Question #9:")
         questionTitle9.setSize(18)
         questionTitle9.setStyle("bold italic")
@@ -677,44 +769,51 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check9 = userAnswer9.getText()
+
         if check9 == answersList[8]:
             questionTitle9.undraw()
             question9.undraw()
             userAnswer9.undraw()
             submit.undraw()
             correctAnswer(win)
+            correct = correct + 1
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle9.undraw()
                 question9.undraw()
-                userAnswer9.undraw()
                 submit.undraw()
+                userAnswer9.undraw()
                 gameOver(win)
                 break
+
             incorrect = incorrect + 1
             questionTitle9.undraw()
             question9.undraw()
             userAnswer9.undraw()
             submit.undraw()
+
             incorrectAnswer(win)
 
         # Question 10:
         questionCount = questionCount + 1
+
         questionTitle10 = Text(Point(250, 100), "Question #10:")
         questionTitle10.setSize(18)
         questionTitle10.setStyle("bold italic")
         questionTitle10.setFace("helvetica")
         questionTitle10.setOutline("green")
         questionTitle10.draw(win)
-
         question10 = Text(Point(250, 150), questionsList[9])
         question10.setSize(12)
         question10.setStyle("bold italic")
@@ -732,20 +831,25 @@ def game(win, questionsList, answersList, availableLifes):
         submit.setFace("helvetica")
         submit.setOutline("green")
         submit.draw(win)
+
         win.getMouse()
 
         check10 = userAnswer10.getText()
+
         if check10 == answersList[9]:
             questionTitle10.undraw()
             question10.undraw()
             userAnswer10.undraw()
             submit.undraw()
             correctAnswer(win)
+            correct = correct + 1
         else:
             if incorrect == 0:
                 availableLifes[2].undraw()
+
             elif incorrect == 1:
                 availableLifes[1].undraw()
+
             elif incorrect == 2:
                 availableLifes[0].undraw()
                 questionTitle10.undraw()
@@ -754,33 +858,129 @@ def game(win, questionsList, answersList, availableLifes):
                 submit.undraw()
                 gameOver(win)
                 break
+
             incorrect = incorrect + 1
             questionTitle10.undraw()
             question10.undraw()
             userAnswer10.undraw()
             submit.undraw()
             incorrectAnswer(win)
+
         youWon(win)
+        correctAnswers(win, correct)
+        thanksAndCreator(win)
+        printScore(username, str(correct))
+
         break
 
 
 def gameOver(win):
+
     gameOver = Text(Point(250, 250), "YOU LOST :/")
     gameOver.setFill("red")
     gameOver.setFace("helvetica")
     gameOver.setSize(24)
     gameOver.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
     win.close()
 
 
 def youWon(win):
+
     gameWon = Text(Point(250, 250), "YOU WON! (;")
     gameWon.setFill("yellow2")
     gameWon.setFace("helvetica")
     gameWon.setSize(24)
     gameWon.draw(win)
-    pressEnterWhenReady(win)
+
+    pressKeyWhenReady(win)
+
+    gameWon.undraw()
+
+
+def correctAnswers(win, correct):
+
+    correctAns = Text(Point(250, 250), "You had")
+    correctAns2 = Text(Point(325, 250), correct)
+    correctAns3 = Text(Point(250, 275), "correct answers.")
+
+    correctAns.setFill("blue")
+    correctAns2.setFill("green")
+    correctAns3.setFill("blue")
+
+    correctAns.setFace("helvetica")
+    correctAns2.setFace("helvetica")
+    correctAns3.setFace("helvetica")
+
+    correctAns.setSize(20)
+    correctAns2.setSize(20)
+    correctAns3.setSize(20)
+
+    correctAns.draw(win)
+    correctAns2.draw(win)
+    correctAns3.draw(win)
+
+    pressKeyWhenReady(win)
+
+    correctAns.undraw()
+    correctAns2.undraw()
+    correctAns3.undraw()
+
+
+def getUser(win):
+
+    getUser = Text(Point(250, 100), "Enter your name:")
+    getUser.setFace("helvetica")
+    getUser.setFill("blue")
+    getUser.setSize(20)
+    getUser.draw(win)
+
+    user = Entry(Point(250, 250), 15)
+    user.setFill("blue")
+    user.draw(win)
+
+    submit = Text(Point(250, 300), "Submit Answer")
+    submit.setSize(16)
+    submit.setStyle("bold italic")
+    submit.setFace("helvetica")
+    submit.setOutline("blue")
+    submit.setFill("blue")
+    submit.draw(win)
+
+    win.getMouse()
+    submit.undraw()
+
+
+    getUser.undraw()
+    user.undraw()
+    username = user.getText()
+    return username
+
+
+def printScore(user, correct):
+
+    scoresFile = open("scores.txt", 'a+')
+    scoresFile.write("\n" + "User:" + " \t " + "Score:" + "\n")
+    scoresFile.write(user + " \t " + correct)
+    scoresFile.close()
+
+
+def thanksAndCreator(win):
+
+    thanks = Text(Point(250, 150), "Thank you for playing!")
+    thanks.setFill("blue")
+    thanks.setSize(22)
+    thanks.setFace("helvetica")
+    thanks.draw(win)
+
+    creator = Text(Point(250, 350), "Creator: Jadnell Reyes")
+    creator.setFill("blue")
+    creator.setSize(18)
+    creator.setFace("helvetica")
+    creator.draw(win)
+    pressKeyWhenReady(win)
     win.close()
+
 
 main()
