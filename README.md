@@ -22,7 +22,7 @@ I used 10 functions, aside from the main. These are:
     - **incorrectAnswer(win)**,   
     - **lifesExplanation(win)**,   
     - **game(win, questionList, answerList, availableLifes)**,   
-    - **gameOver(win)** and   
+    - **gameOver(win)**,    
     - **youWon(win)**  
  
  The functions *consoleLikeLook(win)*, *gameLogo(win)*, *instructions(win)* and *lifesExplanation(win)* are all functions that contain the  
