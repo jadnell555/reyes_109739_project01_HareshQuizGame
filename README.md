@@ -5,9 +5,8 @@
 ### Haresh Quiz Game:
     
 This project was created for institutional purposes. The project consists of creating a simple game using the **graphics.py** module.    
-_Haresh Quiz Game_ is a quiz game that consists of 20 questions. You start with three lives, every time you answer a question     
-incorrectly you lose one. If you lose all of your lives it's game over. If you reach the end without losing all of     
-your lifes, you win.     
+_Haresh Quiz Game_ is a quiz game that consists of 20 questions. You start with three lives, every time you answer a question  
+incorrectly you lose one. If you lose all of your lives it's game over. If you reach the end without losing all of your lifes, you win.     
     
 Like previously mentioned in this program we use the graphics.py module from Zelle's Book. The second module imported has two lists;  
 one list holds all of the questions, while the other holds all of the answer, this way is easier to print them in the window since  
