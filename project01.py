@@ -249,6 +249,8 @@ def questionValidation(win, check, answersList, n, questionTitle, question, user
         incorrect = incorrect + 1
         incorrectAnswer(win)
 
+    return correct, incorrect
+
 def game(win, questionsList, answersList, availableLifes):
     questionCount = 0
     incorrect = 0
@@ -366,7 +368,8 @@ def game(win, questionsList, answersList, availableLifes):
 
         check3 = userAnswer.getText()
     
-        questionValidation(win, check3, answersList, 2, questionTitle3, question3, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check3, answersList, 2, questionTitle3, question3, userAnswer, submit, correct, incorrect, availableLifes)
+
 
         # Question 4:
         questionCount = questionCount + 1
@@ -388,6 +391,7 @@ def game(win, questionsList, answersList, availableLifes):
         check4 = userAnswer.getText()
 
         questionValidation(win, check4, answersList, 3, questionTitle4, question4, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check4, answersList, 3, questionTitle4, question4, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 5:
         questionCount = questionCount + 1
@@ -408,7 +412,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check5 = userAnswer.getText()
 
-        questionValidation(win, check5, answersList, 4, questionTitle5, question5, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check5, answersList, 4, questionTitle5, question5, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 6:
         questionCount = questionCount + 1
@@ -429,7 +433,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check6 = userAnswer.getText()
 
-        questionValidation(win, check6, answersList, 5, questionTitle6, question6, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check6, answersList, 5, questionTitle6, question6, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 7:
         questionCount = questionCount + 1
@@ -450,7 +454,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check7 = userAnswer.getText()
 
-        questionValidation(win, check7, answersList, 6, questionTitle7, question7, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check7, answersList, 6, questionTitle7, question7, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 8:
         questionCount = questionCount + 1
@@ -471,7 +475,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check8 = userAnswer.getText()
 
-        questionValidation(win, check8, answersList, 7, questionTitle8, question8, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check8, answersList, 7, questionTitle8, question8, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 9:
         questionCount = questionCount + 1
@@ -492,7 +496,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check9 = userAnswer.getText()
 
-        questionValidation(win, check9, answersList, 8, questionTitle9, question9, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check9, answersList, 8, questionTitle9, question9, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 10:
         questionCount = questionCount + 1
@@ -513,7 +517,7 @@ def game(win, questionsList, answersList, availableLifes):
 
         check10 = userAnswer.getText()
 
-        questionValidation(win, check10, answersList, 9, questionTitle10, question10, userAnswer, submit, correct, incorrect, availableLifes)
+        correct, incorrect = questionValidation(win, check10, answersList, 9, questionTitle10, question10, userAnswer, submit, correct, incorrect, availableLifes)
 
         youWon(win)
         totalCorrectAnswers(win, correct)
