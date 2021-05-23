@@ -390,7 +390,6 @@ def game(win, questionsList, answersList, availableLifes):
 
         check4 = userAnswer.getText()
 
-        questionValidation(win, check4, answersList, 3, questionTitle4, question4, userAnswer, submit, correct, incorrect, availableLifes)
         correct, incorrect = questionValidation(win, check4, answersList, 3, questionTitle4, question4, userAnswer, submit, correct, incorrect, availableLifes)
 
         # Question 5:
