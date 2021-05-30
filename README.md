@@ -49,7 +49,7 @@ These are:
 - **questionTitleTemplate(win, questionTitle)**
 - **questionsTemplate(win, question)**
 
-Both of these are used as templates for the question title (_Question #n_) and the question itself. I implemented them in a separate file because I couldn't import them from the main project directly to the **questionClass.py** file. This implementation using classes reduced the code from 631 lines of code in _**Version B**_ to 494 lines in _**Version C**_, demonstrating the usefulness of classes in reducing code and giving more flexibility and usability to programs. 
+Both of these are used as templates for the question title (_Question #n_) and the question itself. I implemented them in a separate file because I couldn't import them from the main project directly to the **questionClass.py** file. In the main program, I replaced each and every question and its modifications, with a Question class object. This implementation using classes reduced the code from 631 lines of code in _**Version B**_ to 494 lines in _**Version C**_, demonstrating the usefulness of classes in reducing code and giving more flexibility and usability to programs. 
 
 
 
