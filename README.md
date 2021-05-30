@@ -35,7 +35,7 @@ Aside from the already mentioned functions, I added a few more to reduce code re
 - **questionValidation(win, check, answerList, n, questionTitle, question, userAnswer, submit, correct, incorrect, availableLifes)**, which contains the validation of the questions to know when to remove lifes. 
 - **correctAnsTemplate(win, correctAns)**, which is used as a template for the total correct answers window.
 
-As we can see all of these functions were implemented to reduce code repetition. While most of them have the title template, making it easier to recognize, the questionValidation() function isn't actually a template so it doesn't have the word in it's name. This implementation reduced the code from 986 lines of code to 631 lines, making the program simpler and more manageable.
+As we can see all of these functions were implemented to reduce code repetition. While most of them have the word template on their name, making it easier to recognize, the questionValidation() function isn't actually a template so it doesn't have the word in it's name. This implementation reduced the code from 986 lines of code to 631 lines, making the program simpler and more manageable.
 
 ## CONTACT:
 
